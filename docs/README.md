@@ -10,23 +10,23 @@ Quick summary of the core processes
 - Project Planning
   - Run a kickoff with stakeholders and delivery team, prioritize a backlog with clear acceptance criteria, estimate work, document a Definition of Done, and capture risks and dependencies in a Risk Register.
 
-- Execution &amp; Tracking
+- Execution & Tracking
   - Use regular team rhythms (daily standups, weekly delivery syncs, demos), follow the PR and CI workflow, track velocity and burndown, and escalate blockers via defined escalation levels.
 
-- Risk Management &amp; Communication
+- Risk Management & Communication
   - Maintain a lightweight Risk Register, assess and mitigate risks, communicate status via weekly updates and incident templates, and follow escalation paths for serious issues.
 
-- Release &amp; Deployment
+- Release & Deployment
   - Follow pre-release checks (CI, security scans, release notes), run staging and production smoke tests, and use rollback/incident playbooks for failed deployments.
 
-- Retrospectives &amp; Continuous Improvement
+- Retrospectives & Continuous Improvement
   - Run periodic retrospectives, capture 2–3 action items with owners and due dates, and track improvements in the project backlog.
 
-Roles &amp; responsibilities
+Roles & responsibilities
 
 - Project Manager (PM): coordinates delivery, schedules, risks, and stakeholder communications.
 - Product Manager (PdM): defines outcomes, prioritizes work, and measures success.
-- Developers &amp; QA: implement, test, and validate acceptance criteria.
+- Developers & QA: implement, test, and validate acceptance criteria.
 
 Where to find more detail
 
