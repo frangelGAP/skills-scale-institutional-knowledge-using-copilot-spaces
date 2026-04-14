@@ -24,8 +24,8 @@ Quick summary:
 - [ ] Backup or snapshot (if applicable)
 - [ ] Deploy to staging and run smoke tests; obtain QA sign-off
 - [ ] Feature flags set to correct initial state
-- [ ] Canary deployment to 5 % traffic; monitor for 30 minutes (see canary steps below)
-- [ ] Promote to 100 % once metrics are healthy
+- [ ] Canary deployment to 5% traffic; monitor for 30 minutes (see canary steps below)
+- [ ] Promote to 100% once metrics are healthy
 - [ ] Run post-deploy verifications (health endpoints, error rate, latency, key flows)
 - [ ] Announce release to stakeholders and support
 
@@ -33,20 +33,20 @@ Quick summary:
 
 Use canary rollout for any change touching core user flows or infrastructure:
 
-1. Deploy to canary slice (5 % of production traffic or a single region).
+1. Deploy to canary slice (5% of production traffic or a single region).
 2. Monitor for 30 minutes:
-   - **Error rate** (5xx): alert if > 1 % increase vs. baseline
-   - **Latency p95/p99**: alert if > 10 %/20 % increase vs. baseline
+   - **Error rate** (5xx): alert if > 1% increase vs. baseline
+   - **Latency p95/p99**: alert if > 10%/20% increase vs. baseline
    - **Business metrics**: conversion rate, session errors, key funnels
-3. If healthy, promote in steps: 25 % → 50 % → 100 %, with 15-minute windows at each step.
+3. If healthy, promote in steps: 25% → 50% → 100%, with 15-minute windows at each step.
 4. If any step shows an anomaly, **pause rollout** and follow the Rollback steps below.
 
 ## Monitoring Checks After Deploy
 
 Run immediately after each promotion step:
 - [ ] Application health endpoint returns `200 OK`
-- [ ] Error rate within baseline ± 0.5 %
-- [ ] Latency p95 within baseline ± 10 %
+- [ ] Error rate within baseline ± 0.5%
+- [ ] Latency p95 within baseline ± 10%
 - [ ] Key feature flows pass smoke tests (automated or manual)
 - [ ] Log aggregation (Datadog / Splunk) shows no unexpected error spikes
 - [ ] Alerting rules active and correctly configured

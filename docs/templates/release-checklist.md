@@ -18,7 +18,7 @@ Copy this file into your release branch or reference it from your release PR des
 
 ### Feature Flags
 - [ ] New feature flags are documented in the release notes
-- [ ] Flags intended for gradual rollout are set to the correct initial percentage (e.g., 0 % or 5 %)
+- [ ] Flags intended for gradual rollout are set to the correct initial percentage (e.g., 0% or 5%)
 - [ ] Flags that are being cleaned up / permanently enabled are confirmed with the PdM
 - [ ] Flag states verified in staging environment before production deployment
 
@@ -41,22 +41,22 @@ Copy this file into your release branch or reference it from your release PR des
 ### Canary / Gradual Rollout
 For any change that touches core user flows or infrastructure, use a canary deployment:
 
-1. Deploy to canary slice (e.g., 5 % of production traffic or a specific region).
+1. Deploy to canary slice (e.g., 5% of production traffic or a specific region).
 2. Monitor for **15–30 minutes**:
-   - Error rate: compare against baseline (alert if > 1 % increase)
+   - Error rate: compare against baseline (alert if > 1% increase)
    - Latency (p50 / p95 / p99): compare against previous release
    - Key business metrics: conversion, session length, etc.
-3. If metrics are healthy, promote to 25 %, then 50 %, then 100 % with a 15-minute observation window at each step.
+3. If metrics are healthy, promote to 25%, then 50%, then 100% with a 15-minute observation window at each step.
 4. If any anomaly is detected at any step, **pause the rollout** and follow the rollback steps below.
 
 Example rollout schedule:
 
-| Step | Traffic % | Wait time | Go / No-go owner |
+| Step | Traffic% | Wait time | Go / No-go owner |
 |---|---|---|---|
-| Canary | 5 % | 30 min | On-call engineer |
-| Partial | 25 % | 15 min | On-call engineer |
-| Half | 50 % | 15 min | PM or on-call |
-| Full | 100 % | — | PM or on-call |
+| Canary | 5% | 30 min | On-call engineer |
+| Partial | 25% | 15 min | On-call engineer |
+| Half | 50% | 15 min | PM or on-call |
+| Full | 100% | — | PM or on-call |
 
 ### Deployment Steps
 - [ ] Deployment window confirmed and communicated (if required)
@@ -73,8 +73,8 @@ Example rollout schedule:
 Run these checks immediately after each rollout step:
 
 - [ ] Application health endpoint returns `200 OK`
-- [ ] Error rate (5xx responses) is within baseline ± 0.5 %
-- [ ] Latency p95 is within baseline ± 10 %
+- [ ] Error rate (5xx responses) is within baseline ± 0.5%
+- [ ] Latency p95 is within baseline ± 10%
 - [ ] Key feature flows verified via smoke tests (manual or automated)
 - [ ] Log aggregation (e.g., Splunk, Datadog) shows no unexpected error spikes
 - [ ] Alerting rules are active and correctly configured in monitoring tool
@@ -94,8 +94,8 @@ Run these checks immediately after each rollout step:
 ## Rollback Steps
 
 Trigger rollback if:
-- Error rate increases > 1 % above baseline after canary promotion, or
-- Latency p99 increases > 20 % above baseline, or
+- Error rate increases > 1% above baseline after canary promotion, or
+- Latency p99 increases > 20% above baseline, or
 - A critical business metric degrades significantly, or
 - The on-call engineer or PM makes a judgment call.
 
